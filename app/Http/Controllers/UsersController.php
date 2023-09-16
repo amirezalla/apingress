@@ -18,18 +18,14 @@ class UsersController extends BaseController
 
     public function signup(Request $request)
     {
-        return response()->json([
-            'code' => 201,
-            'message' => 'User registered successfully!',
-            'user' => 'amir'
-        ], 201);
+
         $data = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'nullable|string|max:255',
             'eth_address' => 'required|string|max:255|unique:users',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'nullable|string|email|max:255|unique:users',
             'bio' => 'nullable|string',
         ]);
-        dd($data);
+        
 
         // $data['password'] = bcrypt($data['password']);
 
