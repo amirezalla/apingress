@@ -18,24 +18,28 @@ class UsersController extends BaseController
 
     public function signup(Request $request)
     {
-
         $eth_address = $request->input('eth_address');
 
         $user = User::firstOrCreate(['eth_address' => $eth_address]);
+
+        // Generate token for the user, whether they're new or existing
+        $token = $user->createToken('PAT')->plainTextToken;
 
         // If the user was recently created
         if ($user->wasRecentlyCreated) {
             return response()->json([
                 'code' => 201,
-                'message' => 'User registered successfully!',
+                'message' => 'User registered and logged in successfully!',
+                'access_token' => $token,
                 'user' => $user
             ], 201);  // HTTP status code 201 means "Created"
         } else {
             return response()->json([
-                'code' => 409,
-                'message' => 'User already exists with this eth_address.',
+                'code' => 200,
+                'message' => 'User already exists and is now logged in.',
+                'access_token' => $token,
                 'user' => $user
-            ], 409);  // HTTP status code 409 means "Conflict"
+            ], 200);  // HTTP status code 200 means "OK"
         }
     }
 
