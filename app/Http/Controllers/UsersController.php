@@ -43,17 +43,6 @@ class UsersController extends BaseController
         }
     }
 
-    public function login(Request $request)
-    {
-        $eth_address = $request->eth_address;
-
-
-        $user = User::where('eth_address', $eth_address)->first();
-
-        $token = $user->createToken('PAT')->plainTextToken;
-
-        return response()->json(['access_token' => $token, 'user' => $user]);
-    }
     
     public function logout(Request $request)
     {
