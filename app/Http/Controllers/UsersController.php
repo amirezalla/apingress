@@ -21,7 +21,7 @@ class UsersController extends BaseController
 
         $eth_address = $request->input('eth_address');
 
-        $user = User::firstOrCreate(['eth_address' => $eth_address], $data);
+        $user = User::firstOrCreate(['eth_address' => $eth_address]);
 
         // If the user was recently created
         if ($user->wasRecentlyCreated) {
