@@ -80,7 +80,7 @@
                         <div class="row">
                             <div class="col">
                                 <h6 class="text-muted mb-1">{{__('Total Users')}}</h6>
-                                <span class="h3 font-weight-bold mb-0 ">{{ $home_data['total_user'] }}</span>
+{{--                                <span class="h3 font-weight-bold mb-0 ">{{ $home_data['total_user'] }}</span>--}}
                             </div>
                         </div>
                     </div>
