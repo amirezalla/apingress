@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', function () {
-    return view('auth.login');
-});
+//Route::get('/', function () {
+//    return view('auth.login');
+//});
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
 // User Module
