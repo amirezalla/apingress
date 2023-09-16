@@ -72,7 +72,7 @@
         </div>
         <div class="ms-auto">
             <ul class="list-unstyled">
-                @if( \Auth::user()->type !='client' && \Auth::user()->type !='super admin' )
+{{--                @if( \Auth::user()->type !='client' && \Auth::user()->type !='super admin' )--}}
                     <li class="dropdown dash-h-item drp-notification">
                         <a class="dash-head-link arrow-none me-0" href="{{ url('chats') }}" aria-haspopup="false"
                            aria-expanded="false">
@@ -82,7 +82,7 @@
 {{--                            </span>--}}
 {{--                        </a>--}}
                     </li>
-                @endif
+{{--                @endif--}}
 
 
 
