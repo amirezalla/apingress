@@ -35,7 +35,7 @@
         </div>
         <div class="navbar-content">
 
-            @if((Auth::user()->type == 'super admin'))
+{{--            @if((Auth::user()->type == 'super admin'))--}}
                 <ul class="dash-navbar">
 
                     <li class="dash-item dash-hasmenu {{ (Request::segment(1) == 'dashboard') ? ' active' : '' }}">
@@ -237,7 +237,7 @@
 
 
                 </ul>
-            @endif
+{{--            @endif--}}
 
         </div>
     </div>
