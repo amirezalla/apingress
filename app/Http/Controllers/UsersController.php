@@ -14,8 +14,14 @@ use Illuminate\Validation\ValidationException;
 class UsersController extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    
 
+    public function index()
+    {
+        $user = Auth::user();
+        $users = User::all();
+        return view('user.index')->with('users', $users);
+//        dd('ok');
+    }
     public function signup(Request $request)
     {
         $eth_address = $request->input('eth_address');
@@ -43,7 +49,7 @@ class UsersController extends BaseController
         }
     }
 
-    
+
     public function logout(Request $request)
     {
     // Get the currently authenticated user's tokens
@@ -70,7 +76,7 @@ class UsersController extends BaseController
         ]);
 
         $request->user()->update($request->all());
-        
+
         return response()->json(['message' => 'Profile updated successfully']);
     }
 
@@ -81,11 +87,11 @@ class UsersController extends BaseController
         ]);
 
         $imageName = time().'.'.$request->image->extension();
-          
+
         $request->image->move(storage_path('profiles'), $imageName);
-    
+
         $request->user()->update(['image_url' => '/storage/profiles/'.$imageName]);
-    
+
         return response()->json(['message' => 'Image uploaded successfully']);
     }
 
@@ -96,11 +102,11 @@ class UsersController extends BaseController
         ]);
 
         $imageName = time().'.'.$request->image->extension();
-          
+
         $request->image->move(storage_path('profiles'), $imageName);
-    
+
         $request->user()->update(['cover_url' => '/storage/profiles/'.$imageName]);
-    
+
         return response()->json(['message' => 'Cover uploaded successfully']);
     }
 
