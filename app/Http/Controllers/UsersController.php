@@ -59,7 +59,60 @@ class UsersController extends BaseController
     });
 
     return response()->json('Logged out successfully', 200);
-    
+
     }
+
+
+    public function profile(Request $request)
+    {
+        return response()->json($request->user());
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'bio' => 'nullable',
+        ]);
+
+        $request->user()->update($request->all());
+        
+        return response()->json(['message' => 'Profile updated successfully']);
+    }
+
+    public function uploadImage(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+          
+        $request->image->move(storage_path('profiles'), $imageName);
+    
+        $request->user()->update(['image_url' => '/storage/profiles/'.$imageName]);
+    
+        return response()->json(['message' => 'Image uploaded successfully']);
+    }
+
+    public function uploadCover(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+          
+        $request->image->move(storage_path('profiles'), $imageName);
+    
+        $request->user()->update(['cover_url' => '/storage/profiles/'.$imageName]);
+    
+        return response()->json(['message' => 'Cover uploaded successfully']);
+    }
+
+
+
+
 
 }

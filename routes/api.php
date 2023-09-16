@@ -19,11 +19,25 @@ use App\Http\Controllers\UsersController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::middleware('auth:sanctum')->post('/logout', [UsersController::class, 'logout']);
+Route::prefix('/user')->group(function () {
+
+    Route::put('/signup', [UsersController::class, 'signup']);
+    Route::get('/login', [UsersController::class, 'login']);
+
+    Route::middleware(['auth:sanctum'])->group(function () {
+
+        Route::post('/logout', [UsersController::class, 'logout']);
+        Route::get('/profile', [UsersController::class, 'profile']);
+        Route::post('/update-profile', [UsersController::class, 'update']);
+        Route::post('/upload-image', [UsersController::class, 'uploadImage']);
+        Route::post('/upload-cover', [UsersController::class, 'uploadCover']);
+
+    });
+
+    
+});
 
 
-Route::put('/signup', [UsersController::class, 'signup']);
-Route::get('/login', [UsersController::class, 'login']);
 
 
 

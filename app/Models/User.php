@@ -19,4 +19,10 @@ class User extends Authenticatable
     {
         return $value ?? asset('storage/profiles/profiledefault.jpg');
     }
+
+    public function getCoverUrlAttribute($value)
+    {
+        return $value ?: asset('storage/profiles/coverdefault.jpg');
+    }
+    
 }
