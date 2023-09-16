@@ -44,12 +44,14 @@ class UsersController extends BaseController
         $eth_address = $request->eth_address;
 
         $credentials = $request->only(['eth_address']);
+        dd('qable auth');
 
         if (!Auth::attempt($credentials)) {
             throw ValidationException::withMessages([
                 'eth_address' => ['The provided credentials are incorrect.'],
             ]);
         }
+        dd('bade auth');
 
         $user = User::where('eth_address', $eth_address)->first();
 
