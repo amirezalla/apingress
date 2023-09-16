@@ -1,0 +1,58 @@
+
+<?php
+return[
+    // header part
+    "Sign_In"=>"Anmelden",
+    "public_area"=>"Öffentliches Gebiet",
+    "home"=>"Heim",
+    "help"=>"Hilfe",
+    "institutional_site"=>"Institutionelle Seite",
+    "close"=>"Nah dran",
+    "contact"=>"Kontakt",
+    // home page guest
+    "welcome"=>"Herzlich willkommen",
+    "your_registeration"=>"Ihre Anmeldung",
+    "announcement"=>"Bekanntmachung",
+    "event_title"=>"Veranstaltungstitel",
+    "event_des"=>"Eventbeschreibung",
+    "expired"=>"Abgelaufen",
+    // help part guest
+    "help_you"=>"WIE KÖNNEN WIR IHNEN HELFEN?",
+    "faq"=>"Häufig gestellte Fragen.",
+    "first_faq"=>"Ich bin der erste Akkordeontitel",
+    "second_faq"=>"Ich bin der zweite Titel des Akkordeons",
+    "third_faq"=>"Ich bin der dritte Titel des Akkordeons",
+    "fourth_faq"=>"Ich bin der vierte Titel des Akkordeons",
+    "first_title"=>"HALLO! Ich bin der Erste",
+    "second_title"=>"HALLO! Ich bin der Zweite",
+    "third_title"=>"HALLO! Ich bin der Dritte",
+    "fourth_title"=>"HALLO! Ich bin der Vierte",
+    "first_content"=>"Es ist seit langem bekannt, dass ein Leser beim Betrachten des Layouts durch den lesbaren Inhalt einer Seite abgelenkt wird. Der Punkt bei der Verwendung von Lorem Ipsum besteht darin, dass es eine mehr oder weniger normale Verteilung von Buchstaben hat, im Gegensatz zur Verwendung von Inhalt hier,",
+    "second_content"=>"Es ist seit langem bekannt, dass ein Leser beim Betrachten des Layouts durch den lesbaren Inhalt einer Seite abgelenkt wird. Der Punkt bei der Verwendung von Lorem Ipsum besteht darin, dass es eine mehr oder weniger normale Verteilung von Buchstaben hat, im Gegensatz zur Verwendung von Inhalt hier,",
+    "third_content"=>"Es ist seit langem bekannt, dass ein Leser beim Betrachten des Layouts durch den lesbaren Inhalt einer Seite abgelenkt wird. Der Punkt bei der Verwendung von Lorem Ipsum besteht darin, dass es eine mehr oder weniger normale Verteilung von Buchstaben hat, im Gegensatz zur Verwendung von Inhalt hier,",
+    "fourth_content"=>"Es ist seit langem bekannt, dass ein Leser beim Betrachten des Layouts durch den lesbaren Inhalt einer Seite abgelenkt wird. Der Punkt bei der Verwendung von Lorem Ipsum besteht darin, dass es eine mehr oder weniger normale Verteilung von Buchstaben hat, im Gegensatz zur Verwendung von  Inhalt hier,",
+    "help_buttom"=>"Bereitgestellt von ",
+    // contact part guest
+    "contact_title"=>"Kontaktiere uns",
+    "contact_des"=>"Bitte kontaktieren Sie uns bei Fragen oder Informationen.",
+    "contact_name"=>"Gib deinen Namen ein",
+    "contact_email"=>"Geben sie eine gültige E-Mail-Adresse an",
+    "contact_message"=>"Gib deine Nachricht ein",
+    "reset_contact"=>"Zurücksetzen",
+    "submit_contact"=>"einreichen",
+    "call_contact"=>"Rufen Sie uns an",
+    "loc_contact"=>"Lage",
+    "work_time"=>"Arbeitszeit",
+    "contact_address"=>"Gerolamo Vida Straße, 11, 20127 Mailand (MI)",
+    "contact_phone"=>"Tel.-Nr. 02 58 32 23 02",
+    "contact_fax"=>"Fax :02 58 43 48 33",
+    "contact_times"=>"Montag 9:13.50......",
+    // footer guest
+    "left_header"=>"Transparente Verwaltung",
+    "left_des"=>"Die veröffentlichten personenbezogenen Daten können nur unter den Bedingungen der Gemeinschaftsrichtlinie 2003/98 / EG und des Gesetzesdekrets 36/2006 wiederverwendet werden",
+    "Municipality_name"=>"Gemeindename",
+    "Municipality_address"=>"Straße Roma 0 - 00000 Lorem Ipsum Steuernummer / P. IVA: 000000000",
+    "cer_ellectronics"=>"zertifizierte Email",
+    "cer_elec_des"=>"URP - Ufficio Relazioni con il Pubblico",
+];
+?>
