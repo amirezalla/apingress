@@ -19,9 +19,9 @@ class UsersController extends BaseController
     public function signup(Request $request)
     {
 
-        $data = $request->input('eth_address');
+        $eth_address = $request->input('eth_address');
 
-        $user = User::firstOrCreate(['eth_address' => $data['eth_address']], $data);
+        $user = User::firstOrCreate(['eth_address' => $eth_address], $data);
 
         // If the user was recently created
         if ($user->wasRecentlyCreated) {
