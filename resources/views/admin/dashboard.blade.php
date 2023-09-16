@@ -5,7 +5,7 @@
 @endsection
 
 @section('action-button')
-    @if(Auth::user()->type == 'admin')
+{{--    @if(Auth::user()->type == 'admin')--}}
         <div class="bg-neutral rounded-pill d-inline-block">
             <div class="input-group input-group-sm input-group-merge input-group-flush">
                 <div class="input-group-prepend">
@@ -14,20 +14,20 @@
                 <input type="text" id="keyword" class="form-control form-control-flush" placeholder="{{__('Search by Name or skill')}}">
             </div>
         </div>
-    @endif
+{{--    @endif--}}
 @endsection
 
 @push('theme-script')
-    @if(Auth::user()->type != 'admin')
+{{--    @if(Auth::user()->type != 'admin')--}}
         <script src="{{ asset('assets/libs/dragula/dist/dragula.min.js') }}"></script>
         <script src="{{ asset('assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
-    @endif
+{{--    @endif--}}
 @endpush
 
 @section('content')
-    @if(Auth::user()->type == 'admin')
+{{--    @if(Auth::user()->type == 'admin')--}}
         <div class="row" id="dashboard_view"></div>
-    @else
+{{--    @else--}}
         <div class="row">
             <div class="col-xl-3 col-md-6">
                 <div class="card card-stats">
@@ -307,7 +307,7 @@
                 </div>
             </div>
         </div>
-    @endif
+{{--    @endif--}}
 @endsection
 
 {{--@push('script')--}}
