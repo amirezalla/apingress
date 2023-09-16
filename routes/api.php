@@ -24,7 +24,7 @@ Route::prefix('/user')->group(function () {
     Route::middleware(['auth:sanctum'])->group(function () {
 
         Route::post('/logout', [UsersController::class, 'logout']);
-        Route::post('/profile', [UsersController::class, 'profile']);
+        Route::get('/profile', [UsersController::class, 'profile']);
         Route::post('/update-profile', [UsersController::class, 'update']);
         Route::post('/upload-image', [UsersController::class, 'uploadImage']);
         Route::post('/upload-cover', [UsersController::class, 'uploadCover']);
