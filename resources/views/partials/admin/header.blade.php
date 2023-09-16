@@ -57,13 +57,13 @@
                             <span>{{__('Profile')}}</span>
                         </a>
 
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="dropdown-item">
-                            <i class="ti ti-power"></i>
-                            <span>{{__('Logout')}}</span>
-                        </a>
-                        <form id="frm-logout" action="{{ route('logout') }}" method="POST" class="d-none">
-                            {{ csrf_field() }}
-                        </form>
+{{--                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="dropdown-item">--}}
+{{--                            <i class="ti ti-power"></i>--}}
+{{--                            <span>{{__('Logout')}}</span>--}}
+{{--                        </a>--}}
+{{--                        <form id="frm-logout" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+{{--                            {{ csrf_field() }}--}}
+{{--                        </form>--}}
 
                     </div>
                 </li>
