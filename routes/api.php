@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
 
 
 /*
@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/signup', [UserController::class, 'signup']);
+Route::post('/signup', [UsersController::class, 'signup']);
 Route::get('/gav',function() {return view('welcome');});
 
 
