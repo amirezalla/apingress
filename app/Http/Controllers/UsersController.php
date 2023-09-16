@@ -20,11 +20,9 @@ class UsersController extends BaseController
     {
 
         $data = $request->validate([
-            'name' => 'nullable|string|max:255',
-            'eth_address' => 'required|string|max:255|unique:users',
-            'email' => 'nullable|string|email|max:255|unique:users',
-            'bio' => 'nullable|string',
+            'eth_address' => 'required|string|max:255',
         ]);
+        dd($data);
         
 
         // $data['password'] = bcrypt($data['password']);
