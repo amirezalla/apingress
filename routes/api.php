@@ -22,7 +22,7 @@ use App\Http\Controllers\UsersController;
 Route::prefix('/user')->group(function () {
 
     Route::put('/signup', [UsersController::class, 'signup']);
-    Route::get('/login', [UsersController::class, 'login']);
+    Route::post('/login', [UsersController::class, 'login']);
 
     Route::middleware(['auth:sanctum'])->group(function () {
 
