@@ -23,6 +23,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->registerPolicies();
+
+        Auth::provider('eloquent-eth', function($app, array $config) {
+            return new EthAddressUserProvider($app['hash'], $config['model']);
+        });
     }
 }
