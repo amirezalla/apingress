@@ -42,7 +42,14 @@ class UsersController extends BaseController
     public function login(Request $request)
     {
         $eth_address = $request->eth_address;
-        dd($eth_address);
+
+        $credentials = $request->only(['eth_address']);
+
+        if (!Auth::attempt($credentials)) {
+            throw ValidationException::withMessages([
+                'eth_address' => ['The provided credentials are incorrect.'],
+            ]);
+        }
 
         $user = User::where('eth_address', $eth_address)->first();
 
