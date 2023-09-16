@@ -71,7 +71,7 @@ class DashboardController extends Controller
 
 
         // Total Users
-        $home_data['total_user'] = Auth::user()->count();
+//        $home_data['total_user'] = Auth::user()->count();
 
 
 
