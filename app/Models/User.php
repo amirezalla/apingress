@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     use HasFactory;
-    
+
     public function getImageUrlAttribute($value)
     {
-        return $value ?? 'default_image_url_here';
+        return $value ?? asset('storage/profiles/profiledefault.jpg');
     }
 }
