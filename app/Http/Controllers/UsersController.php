@@ -44,8 +44,9 @@ class UsersController extends BaseController
         $eth_address = $request->eth_address;
 
         $credentials = $request->only(['eth_address']);
-        
+
         if (!Auth::attempt($credentials)) {
+            echo'amir';
             throw ValidationException::withMessages([
                 'eth_address' => ['The provided credentials are incorrect.'],
             ]);
