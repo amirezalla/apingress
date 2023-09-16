@@ -19,13 +19,7 @@ class UsersController extends BaseController
     public function signup(Request $request)
     {
 
-        $data = $request->validate([
-            'eth_address' => 'required|string|max:255',
-        ]);
-        dd($data);
-        
-
-        // $data['password'] = bcrypt($data['password']);
+        $data = $request->input('eth_address');
 
         $user = User::firstOrCreate(['eth_address' => $data['eth_address']], $data);
 
