@@ -16,9 +16,11 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::middleware('auth:sanctum')->post('/logout', [UsersController::class, 'logout']);
+
 
 Route::put('/signup', [UsersController::class, 'signup']);
 Route::get('/login', [UsersController::class, 'login']);

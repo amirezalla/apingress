@@ -50,5 +50,16 @@ class UsersController extends BaseController
 
         return response()->json(['access_token' => $token, 'user' => $user]);
     }
+    
+    public function logout(Request $request)
+    {
+    // Get the currently authenticated user's tokens
+    $request->user()->tokens->each(function ($token, $key) {
+        $token->delete();
+    });
+
+    return response()->json('Logged out successfully', 200);
+    
+    }
 
 }
