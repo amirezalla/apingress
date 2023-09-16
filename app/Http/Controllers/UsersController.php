@@ -15,13 +15,7 @@ class UsersController extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    public function index()
-    {
-        $user = Auth::user();
-        $users = User::all();
-        return view('user.index')->with('users', $users);
-//        dd('ok');
-    }
+
     public function signup(Request $request)
     {
         $eth_address = $request->input('eth_address');

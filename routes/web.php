@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserController;
 
 
 
@@ -27,15 +27,15 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
 // User Module
 
-Route::get('users/{view?}', [App\Http\Controllers\UsersController::class, 'index'])->name('users.index');
-Route::get('users/{id}', [App\Http\Controllers\UsersController::class, 'edit'])->name('users.edit');
-Route::get('users-view', [UsersController::class, 'filterUserView'])->name('filter.user.view')->middleware(['auth', 'XSS']);
-Route::get('checkuserexists', [UsersController::class, 'checkUserExists'])->name('user.exists')->middleware(['auth', 'XSS']);
-Route::get('profile', [UsersController::class, 'profile'])->name('profile')->middleware(['auth', 'XSS']);
-Route::post('/profile', [UsersController::class, 'updateProfile'])->name('update.profile')->middleware(['auth', 'XSS']);
-Route::get('user/info/{id}', [UsersController::class, 'userInfo'])->name('users.info')->middleware(['auth', 'XSS']);
-Route::get('user/{id}/info/{type}', [UsersController::class, 'getProjectTask'])->name('user.info.popup')->middleware(['auth', 'XSS']);
-Route::delete('users/{id}', [UsersController::class, 'destroy'])->name('user.destroy')->middleware(['auth', 'XSS']);
+Route::get('users/{view?}', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+Route::get('users/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
+Route::get('users-view', [UserController::class, 'filterUserView'])->name('filter.user.view')->middleware(['auth', 'XSS']);
+Route::get('checkuserexists', [UserController::class, 'checkUserExists'])->name('user.exists')->middleware(['auth', 'XSS']);
+Route::get('profile', [UserController::class, 'profile'])->name('profile')->middleware(['auth', 'XSS']);
+Route::post('/profile', [UserController::class, 'updateProfile'])->name('update.profile')->middleware(['auth', 'XSS']);
+Route::get('user/info/{id}', [UserController::class, 'userInfo'])->name('users.info')->middleware(['auth', 'XSS']);
+Route::get('user/{id}/info/{type}', [UserController::class, 'getProjectTask'])->name('user.info.popup')->middleware(['auth', 'XSS']);
+Route::delete('users/{id}', [UserController::class, 'destroy'])->name('user.destroy')->middleware(['auth', 'XSS']);
 // End User Module
 // Orders
 
