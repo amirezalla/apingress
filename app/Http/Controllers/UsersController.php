@@ -41,9 +41,8 @@ class UsersController extends BaseController
 
     public function login(Request $request)
     {
-        $request->validate([
-            'eth_address' => 'required'
-        ]);
+        $eth_address = $request->eth_address;
+
 
         $credentials = $request->only(['eth_address']);
 
@@ -53,9 +52,9 @@ class UsersController extends BaseController
             ]);
         }
 
-        $user = User::where('eth_address', $request->email)->first();
+        $user = User::where('eth_address', $request->eth_address)->first();
 
-        $token = $user->createToken('Personal Access Token')->plainTextToken;
+        $token = $user->createToken('PAT')->plainTextToken;
 
         return response()->json(['access_token' => $token, 'user' => $user]);
     }
