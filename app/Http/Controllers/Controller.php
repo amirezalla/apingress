@@ -9,7 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
     private function dd(){
-        dd('okay');
+        dd('okay'); 
     }
 }
