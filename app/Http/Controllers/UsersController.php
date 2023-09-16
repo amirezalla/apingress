@@ -24,6 +24,7 @@ class UsersController extends BaseController
             'email' => 'required|string|email|max:255|unique:users',
             'bio' => 'nullable|string',
         ]);
+        dd($data);
 
         // $data['password'] = bcrypt($data['password']);
 
